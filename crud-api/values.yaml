@@ -16,3 +16,12 @@ crud-api:
         targetPort: 8080
         protocol: TCP
         name: http
+
+postgresql-crud-api:
+  enabled: true
+  fullnameOverride: postgresql-crud-api
+  auth:
+    database: crud-api
+    existingSecret: crud-api-secret
+    secretKeys:
+      adminPasswordKey: not-use-here

@@ -26,3 +26,7 @@ crud-api:
             name: crud-api-secret
             key: PGSQL_DEV_PASSWORD
             optional: false
+
+postgresql-crud-api:
+    secretKeys:
+      adminPasswordKey: PGSQL_DEV_PASSWORD
