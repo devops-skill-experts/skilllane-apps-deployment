@@ -8,7 +8,7 @@ crud-api:
   pods:
     env:
       - name: DB_HOST
-        value: "postgresql"
+        value: "postgresql-crud-api"
 
       - name: DB_NAME
         value: "crud-api"
