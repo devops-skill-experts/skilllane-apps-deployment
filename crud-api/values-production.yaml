@@ -8,7 +8,7 @@ crud-api:
   pods:
     env:
       - name: DB_HOST
-        value: "postgresql"
+        value: "postgresql-crud-api"
 
       - name: DB_NAME
         value: "crud-api"
@@ -26,3 +26,8 @@ crud-api:
             name: crud-api-secret
             key: PGSQL_PROD_PASSWORD
             optional: false
+
+postgresql-crud-api:
+  auth:
+    secretKeys:
+      adminPasswordKey: PGSQL_PROD_PASSWORD
