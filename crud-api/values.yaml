@@ -10,5 +10,5 @@ crud-api:
     image:
       name: asia-southeast1-docker.pkg.dev/devops-skills-sharing/skilllane/skilllane-crud-demo
   service:
-    enabled: false
+    enabled: true
     ports: []
