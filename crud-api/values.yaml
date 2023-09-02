@@ -11,4 +11,8 @@ crud-api:
       name: asia-southeast1-docker.pkg.dev/devops-skills-sharing/skilllane/skilllane-crud-demo
   service:
     enabled: true
-    ports: []
+    ports:
+      - port: 8080
+        targetPort: 8080
+        protocol: TCP
+        name: http
