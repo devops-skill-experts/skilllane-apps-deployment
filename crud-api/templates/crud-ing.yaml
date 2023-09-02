@@ -18,6 +18,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: crud-api-{{ .Values.envAlias }}-crud-api
+                name: crud-api-{{ .Values.envAlias }}
                 port:
                   number: 8080
