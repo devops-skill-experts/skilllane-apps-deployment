@@ -1,0 +1,28 @@
+envAlias: production
+domainHttp: crud-api.chalam-kitchen.com
+
+crud-api:
+  ingress:
+    enabled: false
+
+  pods:
+    env:
+      - name: DB_HOST
+        value: "postgresql"
+
+      - name: DB_NAME
+        value: "crud-api"
+
+      - name: DB_USER
+        valueFrom:
+          secretKeyRef:
+            name: crud-api-secret
+            key: PGSQL_PROD_USERNAME
+            optional: false
+
+      - name: DB_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: crud-api-secret
+            key: PGSQL_PROD_PASSWORD
+            optional: false

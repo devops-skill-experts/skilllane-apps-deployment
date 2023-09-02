@@ -1,0 +1,14 @@
+crud-api:
+  enabled: true
+  nameOverride: crud-api
+
+  podDisruptionBudget:
+    enabled: false
+
+  pods:
+    controller: deployment
+    image:
+      name: asia-southeast1-docker.pkg.dev/devops-skills-sharing/skilllane/skilllane-crud-demo
+  service:
+    enabled: false
+    ports: []

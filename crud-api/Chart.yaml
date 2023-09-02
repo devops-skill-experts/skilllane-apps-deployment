@@ -1,0 +1,17 @@
+apiVersion: v2
+name: helm-crud-api
+description: A Helm chart for CRUD API
+
+type: application
+
+version: 1.0.0
+
+appVersion: "1.0"
+
+dependencies:
+  ### CRUD API ###
+  - name: "generic-app"
+    alias: crud-api
+    condition: crud-api.enabled
+    repository: "https://charts.visonneau.fr/"
+    version: "0.0.14"
