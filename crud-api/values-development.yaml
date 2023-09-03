@@ -1,15 +1,11 @@
 envAlias: development
 domainHttp: crud-api.dev.chalam-kitchen.com
+crudApiHpaMax: 2
+crudApiHpaMin: 1
 
 crud-api:
   ingress:
     enabled: false
-
-  horizontalPodAutoscaler:
-    enabled: true
-    minReplicas: 1
-    maxReplicas: 2
-    targetAverageCPUUtilization: 50
 
   pods:
     replicas: 1
