@@ -5,7 +5,21 @@ crud-api:
   ingress:
     enabled: false
 
+  horizontalPodAutoscaler:
+    enabled: false
+    minReplicas: 2
+    maxReplicas: 5
+    targetAverageCPUUtilization: 50
+
   pods:
+    replicas: 2
+    resources:
+      limits:
+        cpu: 200m
+        memory: 100Mi
+      requests:
+        cpu: 50m
+        memory: 30Mi
     env:
       - name: DB_HOST
         value: "postgresql-crud-api"
