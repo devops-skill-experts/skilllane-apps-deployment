@@ -1,4 +1,4 @@
 crud-api:
   pods:
     image:
-      tag: "develop-25eddf5"
+      tag: "develop-aa27db8"
