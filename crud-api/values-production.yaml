@@ -6,7 +6,7 @@ crud-api:
     enabled: false
 
   horizontalPodAutoscaler:
-    enabled: false
+    enabled: true
     minReplicas: 2
     maxReplicas: 5
     targetAverageCPUUtilization: 50
