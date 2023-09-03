@@ -3,14 +3,16 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: crud-api-hpa
 spec:
-  maxReplicas: {{ .Values.crudApiHpaMax }}
-  metrics:
-    - resource:
-        name: cpu
-        targetAverageUtilization: 50
-      type: Resource
-  minReplicas: {{ .Values.crudApiHpaMin }} 
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: crud-api-{{ .Values.envAlias }}
+  minReplicas: {{ .Values.crudApiHpaMin }} 
+  maxReplicas: {{ .Values.crudApiHpaMax }}
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 50
