@@ -1,11 +1,21 @@
 envAlias: development
 domainHttp: crud-api.dev.chalam-kitchen.com
+crudApiHpaMax: 2
+crudApiHpaMin: 1
 
 crud-api:
   ingress:
     enabled: false
 
   pods:
+    replicas: 1
+    resources:
+      limits:
+        cpu: 100m
+        memory: 100Mi
+      requests:
+        cpu: 50m
+        memory: 30Mi
     env:
       - name: DB_HOST
         value: "postgresql-crud-api"
